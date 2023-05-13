@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.6.4.slim.js" defer></script>
+    <script src="js/bootstrap/bootstrap.min.js" defer></script>
+    <script src="services/customers-service.js" type="module" defer></script>
+
+    <title>CLIENTES</title>
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img class="logo" src="img/logo.jpg" alt="logo" srcset=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="clientes.html">CLIENTE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="ventas.html">VENTAS</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <nav></nav>
+
+    <main>
+        <div class="container mt-2">
+            <div class="container mt-2">
+                <h1>Gestor de Clientes</h1>
+                <div>
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link menu" aria-current="page" href="#"
+                                data-veryocultar='["#registro", ["#listar", "#buscar"]]'>Registro</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu" href="#"
+                                data-veryocultar='["#listar", ["#registro", "#buscar"]]'>Listar Clientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu" href="#"
+                                data-veryocultar='["#buscar", ["#listar", "#registro"]]'>Buscar</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="container mt-3" id="registro">
+                <!--Forumulario-->
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Registra Clientes</h2>
+                    </div>
+                    <div class="card-body">
+                        <form id="fromDatos">
+                            <div class="container text-center">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="mb-3">
+                                            <label for="createdAt" class="form-label">Ingrese la fecha:</label>
+                                            <input type="date" class="form-control" id="createdAt" name="createdAt"
+                                                readonly />
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="mb-3">
+                                            <label for="nombres" class="form-label">Ingrese el nombres:</label>
+                                            <input type="text" class="form-control" id="nombres" name="nombres" />
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="mb-3">
+                                            <label for="apellidos" class="form-label">Ingrese el apellidos:</label>
+                                            <input type="text" class="form-control" id="apellidos" name="apellidos" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label">Ingrese el Email:</label>
+                                            <input type="email" class="form-control" id="email" name="email" />
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="mb-3">
+                                            <label for="nroMovil" class="form-label">Numero de Celular:</label>
+                                            <input type="number" class="form-control" id="nroMovil" min="0"
+                                                name="nroMovil" />
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="mb-3">
+                                            <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento:</label>
+                                            <input type="date" class="form-control" id="fechaNacimiento"
+                                                name="fechaNacimiento" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container text-center">
+
+                                <button type="submit" class="btn btn-primary" id="nuevoCliente"
+                                    data-habilitardesabilitar='[["#guardarCliente"], ["#nuevoCliente"]]'>NUEVO
+                                    CLIENTE</button>
+
+                                <!--<button disabled type="submit" class="btn btn-danger" id="cancelarRegistro" data-habilitardesabilitar='[["#nuevoCliente"], ["#cancelarRegistro", "#editarCliente", "#eliminarCliente", "#guardarCliente"]]'>CANCELAR REGISTRO</button>-->
+
+                                <button disabled type="submit" class="btn btn-success" id="guardarCliente"
+                                    data-habilitardesabilitar='[["#nuevoCliente"], ["#guardarCliente"]]'>GUARDAR
+                                    CLIENTE</button>
+
+                                <!--<button disabled type="submit" class="btn btn-warning" id="editarCliente" data-habilitardesabilitar='[["#nuevoCliente", "#eliminarCliente", "#editarCliente"], ["#cancelarRegistro", "#guardarCliente"]]'>EDITAR CLIENTE</button>-->
+
+                                <!--<button disabled type="submit" class="btn btn-danger" id="eliminarCliente" data-habilitardesabilitar='[["#nuevoCliente"], ["#cancelarRegistro", "#editarCliente", "#eliminarCliente", "#guardarCliente"]]'>ELIMINAR CLIENTE</button>-->
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="container" id="listar">
+                <h2>Ver Lista de los clientes</h2>
+                <table class="table table-dark table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">id</th>
+                            <th scope="col">nombres</th>
+                            <th scope="col">apellidos</th>
+                            <th scope="col">email</th>
+                            <th scope="col">nroMovil</th>
+                            <th scope="col">fechaNacimiento</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="container" id="buscar">
+                <h2>Buscar clientes</h2>
+            </div>
+
+        </div>
+    </main>
+
+    <footer></footer>
+
+</body>
+
+</html>

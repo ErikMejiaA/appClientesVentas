@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.6.4.slim.js" defer></script>
+    <script src="js/bootstrap/bootstrap.min.js" defer></script>
+    <!--<script src="services/customers-service.js" type="module" defer></script>-->
+
+    <title>VENTAS</title>
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img class="logo" src="img/logo.jpg" alt="logo" srcset=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="clientes.html">CLIENTE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="ventas.html">VENTAS</a>
+                        </li> 
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <nav></nav>
+
+    <main>
+        <div class="container mt-2">
+            <h1>Gestor de ventas</h1>
+            <div>
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                      <a class="nav-link menu" aria-current="page" href="#" data-veryocultar='["#registro", ["#listar", "#buscar"]]'>Ventas</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link menu" href="#" data-veryocultar='["#listar", ["#registro", "#buscar"]]'>Listar Ventas</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link menu" href="#" data-veryocultar='["#buscar", ["#listar", "#registro"]]'>Buscar ventas</a>
+                    </li>
+                  </ul>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <div class="container" id="registro">
+                <h2>Registra ventas</h2>
+            </div>
+            <div class="container" id="listar">
+                <h2>Ver ventas</h2>
+            </div>
+            <div class="container" id="buscar">
+                <h2>Buscar ventas</h2>
+            </div>
+
+        </div>
+    </main>
+
+    <footer></footer>
+
+</body>
+</html>

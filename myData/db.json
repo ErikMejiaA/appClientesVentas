@@ -1,0 +1,32 @@
+{
+  "customers": [
+    {
+      "createdAt": "2023-05-08",
+      "nombres": "tobias",
+      "apellidos": "lizarazo",
+      "email": "pedro@gmail",
+      "nroMovil": "5555",
+      "fechaNacimiento": "2023-05-09",
+      "id": 1
+    },
+    {
+      "createdAt": "2023-05-08",
+      "nombres": "pedro",
+      "apellidos": "ortiz",
+      "email": "pedro@gmail.com",
+      "nroMovil": "434343",
+      "fechaNacimiento": "2023-05-03",
+      "id": 2
+    },
+    {
+      "createdAt": "2023-05-09",
+      "nombres": "laura",
+      "apellidos": "burgos",
+      "email": "laura@gmail.com",
+      "nroMovil": "636363",
+      "fechaNacimiento": "2023-05-15",
+      "id": 3
+    }
+  ],
+  "sales": []
+}
